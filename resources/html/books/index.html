@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+<h1 class="title">Your Books</h1>
+<a href="/books/new">Add a new book</a>
+<table class="table is-striped is-hoverable is-fullwidth">
+  <thead>
+    <tr>
+      <th>Link</th>
+      <th>Title</th>
+      <th>Author</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for book in books %}    
+    <tr>
+      <td><a href="/books/{{book.id}}">link</a></td>
+      <td>{{book.title}}</td>
+      <td>{{book.author}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
